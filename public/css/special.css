@@ -17,6 +17,16 @@ hr {
     background-image:      -o-linear-gradient(left, #ccc, #333, #ccc); 
 }
 
+@font-face {
+	font-family: "Melbourne-bold";
+	src: url("/fonts/melbourne-bold.otf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+.font-melbourne {
+	font-family: 'Melbourne-bold';
+}
 
 .gameline {
 	background-color: #C4C4C4;
@@ -25,6 +35,47 @@ hr {
 	
 }
 
+.panel {
+	.margin: 0px;
+	.border: 24;
+}
+
+.page-title h1 {
+	font-family: 'Melbourne-bold';
+	font-size: 72pt;
+	display: inline;
+	margin-top: ;
+}
+
+.page-title h2 {
+	font-family: 'Melbourne-bold';
+	font-size: 64pt;
+	display: inline;
+}
+
+.page-title h6 {
+	font-family: 'Melbourne-bold';
+	font-size: 16pt;
+	margin-bottom: 0;
+}
+
+.page-title br {
+	margin-top: 5px;
+}
+
+.modal-header {
+	padding-bottom: 0;
+	padding-top: 6px;
+}
+
+.modal-body {
+	padding-bottom: 0;
+}
+.user-signin {
+	display: inline;
+	margin: auto;
+	text-align: center;
+}
 .gameline h1 {
 	padding-top: 1em;
 
@@ -35,12 +86,36 @@ hr {
 
 }
 
+#user-name-login {
+	width:27%;
+}
+
+#password-login {
+	width:27%;
+}
+
+#user-display {
+	display: inline;
+	text-align: center;
+	margin: auto;
+}
+
+#user-loading {
+	text-align: center;
+	margin: auto;
+}
+
+#user-loading img {
+	left: 50%;
+    margin-top: 16px;
+}
 
 .ruleline {
 	background-color: #5C7FAC;
 	color: white;
 	text-align: center;
-	}
+}
+
 .rulespace {
 	background-color: gray;
 }
@@ -63,16 +138,37 @@ img {
 }
 
 .foodrule {
-border: solid;
-border-width: thin;
-border-spacing: 3em;
-padding: 0.5em;
-text-align: center;
-
+	border: solid;
+	text-align: center;
+	border-color: #454545;
+	border-width: 2px;
+	border-radius: 7px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
+.rule-food-icon {
+	text-align: right;
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.rule-food-icon img {
+	max-width:140px; 
+	max-height:140px;
+}
+
+#title-panel.panel-default {
+	text-align: center;
+	border-color: #454545;
+	border-width: 2px;
+	border-radius: 25px;
+}
+
+
 #page-title {
-	background-color: silver;
 	padding-top: 0.2em;
 	margin: 0;
 }
@@ -89,6 +185,23 @@ text-align: center;
 	text-align: center;
 }
 
-.panel {
-	background-color: silver;
+.game-time h3 {
+	display: inline;
 }
+
+.game-panel {
+	width: 100%;
+	text-align: left;
+	border-color: #454545;
+	border-width: 2px;
+	border-radius: 13px;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.game-panel.panel-heading {
+	background-color: #454545;
+}
+

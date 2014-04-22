@@ -1,8 +1,43 @@
-<div class="panel">
-  <!-- <form id="sign-in" action=""> -->  
-    <input id="user-name" type="text" name="name" placeholder="username"></input>
-    <input id="password" type="password" name="pwd" placeholder="password"></input>
-    <a id="sign-in-anchor" href="#user-view"><button id="signin-button">Sign In</button></a>
-    <a id="signUp" href="#user-signup">(Sign Up)</a>
-<!--  </form> -->
- </div>
+<div class="user-signin">
+	<div id="failed-login"></div>   	
+	<nav class="form-inline">
+
+	  	<input type="text" id="user-name-login" class="form-control" placeholder="Username">
+		<input type="text" id="password-login" class="form-control" placeholder="Password">
+
+		<button type="button" class="btn btn-primary" id="signin-button">Sign In</button>
+
+		<button class="btn btn-default" data-toggle="modal" data-target=".create-account-modal">Create Account</button>
+
+		<div class="modal fade bs-example-modal-sm create-account-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+
+	  		<div class="modal-dialog modal-sm modal-dialog-center">
+			    <div class="modal-content">
+
+			    	<div class="modal-header">
+			    		<h4>Create User Account</h4>
+			    	</div>
+
+				    	<div class="modal-body">
+		    			<form class="form-signin">
+		    	  
+			    	  	<input type="text" id="user-name-signup" class="form-control" placeholder="Username">
+			  			<input type="text" id="password-signup" class="form-control" placeholder="Password">
+
+				    	<button type="button" class="btn btn-primary navbar-btn" id="signup-button">Create Account</button>
+				    	</a>
+
+				    	<br>
+				    
+				    	<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+
+				    	<br>
+		    			</form>
+	    			
+	    				<br>
+	    			</div>
+    			</div>
+  			</div>
+		</div>
+	</nav>
+</div>

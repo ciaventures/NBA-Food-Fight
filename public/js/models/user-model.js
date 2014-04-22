@@ -27,6 +27,16 @@ define(function(require) {
 		    // url: 'Users/'
 		}, 
 
+		clearData: {
+		    userName: '',
+		    password: '',
+		    foodAwards: {},
+		    record: {},
+		    previousResult: {},
+		    dailySelection: {},
+
+		},
+
 		urlRoot: 'Users/'
 
 
