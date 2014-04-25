@@ -63,7 +63,7 @@ app.get('/Users/:username', function (req, res) {
 
 		res.end('No user found.')
 	})
-})
+});
 
 
 app.get('/Users', function (req, res) {

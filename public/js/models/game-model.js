@@ -11,7 +11,9 @@ define(function(require) {
 		},
 
 		validate: function(attribs) {
-		}
+		},
+
+		url: "/Events"
 
 	});
 
