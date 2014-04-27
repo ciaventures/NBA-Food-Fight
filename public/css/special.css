@@ -192,6 +192,12 @@ img {
 	max-height:140px;
 	min-height: 0px;
 }
+.food-awards p {
+	font-size: 2em;
+}
+.food-awards strong {
+	font-size: 3em;
+}
 
 .food-awards img {
 	max-width:85px; 
@@ -265,6 +271,7 @@ img {
 	border-width: 8px;
 }
 
+
 .menu-output {
 	text-align: center;
 }
@@ -272,3 +279,4 @@ img {
 .user-name {
 	display: inline;
 }
+

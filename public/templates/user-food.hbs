@@ -1,14 +1,29 @@
+
  <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
+    <div class="col-md-8 col-md-offset-2">
       <div class="panel game-panel panel-default">
           <div class="food-awards">
-            <p>Your overall record is {{#each record}}{{/each}}.</p>
-            {{#each foodAwards}}
-            <img src="/images/food/{{this}}.png"> 
-            {{/each}} 
-          </div>
+            <p>Your overall record:<br />
+              <strong>{{record.wins}}</strong> {{checkIfOneWin record.wins}},
+              <strong>{{record.losses}}</strong>{{checkIfOneLoss record.losses}}
+          </p></div>
         </div>
-      </div>  
+      <div class="panel game-panel panel-default">
+          <div class="food-awards">
+          {{#if foodAwards}}
+          {{#each foodAwards}}
+              <img src="/images/food/{{this}}.png"> 
+            {{/each}}
+            
+          {{else}}
+
+          <p>You have not won any food. You're like the Milwaukee Bucks right now.</p>
+            
+
+            {{/if}}
+          </div>
+      </div> 
+    </div>  
     </div>
   </div>
 

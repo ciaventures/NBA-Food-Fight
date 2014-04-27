@@ -35,44 +35,28 @@ define(function(require) {
 			$('.active').removeClass('active');
 			$(this.el).find('.panel').addClass('active');
 
-			var gameModel = new GameModel({'id': this.model.get('dailySelection')});
-			console.log(gameModel);
-
-			gameModel.fetch({
-				success: function() {
-					var gameSelect = gameModel.get('homeTeamId');
-					console.log(gameSelect);
-					$('#most-recent-result').replaceWith(gameSelect);
-				}
-			});
-
-			$(this.el).find('.panel').addClass("active");
 			$('.modal-title').removeClass('red').addClass('green');
 			this.showModal('Game Selected', 'You have chosen the ' + this.model.attributes.homeTeam.teamName + ' vs. the ' + this.model.attributes.awayTeam.teamName
 			+ '<p> ' + this.model.attributes.homeTeam.foodRules[0].ruleDescription + '</p>' );
+			
+			$('#today-picks').replaceWith('<div class="col-xs-6"><h5>Your pick today is: ' + this.model.attributes.homeTeam.teamName  + '. Good luck!</h5></div>');
+
+
+
 		},
 
 		currentGameDisplay: function() {
 			var userGameSelect = new User();
 
-
 			userGameSelect.fetch({
-				success: function (model, response, options) {
-					var todayPick = model.get('dailySelection').homeTeam.teamName;
-					$('#today-picks').html('<div class="col-xs-6"><h5>Your pick today is: ' + todayPick  + '. Good luck!</h5></div>');
-
+				success: function(model, response, options) {
+					var dailySelection = model.get('dailySelection').homeTeam.teamName;
+					console.log(dailySelection);
+					$('#today-picks').replaceWith('<div class="col-xs-6"><h5>New pick: Your pick today is: ' + dailySelection  + '. Good luck!</h5></div>');
 				}
 			});
 
-			var gameModel = new GameModel({'id': this.model.get('dailySelection')});
-			var gameSelect = (this.model.attributes.homeTeam.teamName);
-			
-			gameModel.fetch({
-				success: function() {
-					$('#today-picks').html('<div class="col-xs-6"><h5>Your pick today is: ' + gameSelect + '. Good luck!</h5></div>');
-					console.log("Game Display was succesful.");
-				}
-			});
+
 		},
 
 
@@ -127,6 +111,7 @@ define(function(require) {
 				
 			} else {
 			this.gameBorder();
+			
 
 			curUser.fetch({
 				success: function(model, response, options) {
@@ -155,11 +140,3 @@ define(function(require) {
 	return GameView;
 });
 
-
-
-
-// 	$(".gameContainer").addClass("active");
-// 			}, function () {
-// 				$(".gameContainer").removeClass("active");
-// 			});
-// });

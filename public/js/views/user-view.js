@@ -59,7 +59,11 @@ define(function (require) {
     render: function() { 
       this.$el.html(this.template(this.model.toJSON())); 
       if (this.model.get('userName')) {
-         this.showLastResult();
+
+         this.showLastResult(); 
+         this.dailyPick();
+     
+
       }
 
     },
@@ -143,13 +147,14 @@ define(function (require) {
 
         var previousResult = this.model.get('previousResult');
         
-        if (typeof previousResult == 'object') {
-          if(Object.keys(this.model.get('previousResult')).length) {
+        if (typeof previousResult == 'object' && previousResult != null) {
+          if(Object.keys(previousResult).length) {
               if (previousResult.homeTeam.foodRules[0].foodWon === true) {
                 previousResult.result = "WINNER";
               } else {
                 previousResult.result = "LOSER";
               }
+
               var recentTemplate = require('hbs!templates/recent-game');
 
             $('#most-recent-result').html(recentTemplate(this.model.get('previousResult')));
@@ -158,6 +163,7 @@ define(function (require) {
 
             noRecentResults();
           
+
           }
         } else {
           noRecentResults();
@@ -167,7 +173,35 @@ define(function (require) {
         function noRecentResults() {
           $('#most-recent-result').html('<h3 style="text-align:center;">You have no previous picks.</h3>');
         }
-     }
+              
+     },
+
+     dailyPick: function() {
+      var dailySelection = (this.model.get('dailySelection'));
+    
+        if (typeof dailySelection === 'object' && dailySelection != null) {
+
+          if (Object.keys(dailySelection).length) {
+             $('#today-picks').html('<div class="col-xs-6"><h5>Your pick today is: ' + dailySelection.homeTeam.teamName  + '. Good luck!</h5></div>');
+           } else {
+            noDailySelection();
+           } 
+         } else {
+          noDailySelection();
+        }
+        function noDailySelection() {
+          $('#today-picks').html('<div class="col-xs-6"><h5>You have not made a pick today. Select below.</h5></div>');
+        }
+      }
+     //            if (typeof currentSelection == null) {
+     //              $('#today-picks').html('<div class="col-xs-6"><h5>You have not made a pick today. Select below.</h5></div>');
+     //            } else {
+     //              $('#today-picks').html('<div class="col-xs-6"><h5>Your pick today is: ' + currentSelection  + '. Good luck!</h5></div>');
+     //            }
+     //        console.log("currentSElection function has been run.");
+     // }
+
+
 
   });
     
