@@ -4,10 +4,10 @@ NBA Food Fight
 A game that allows you to play along with in-arena food promotions awards at NBA games with people in the stadium. The application retrieves data from xmlstats
 <br />
 ##Contributors
-Colin Lebens
-Ian Forrest
-Andrew DuBrock
 <br />
+Colin Lebens<br />
+Ian Forrest<br />
+Andrew DuBrock
 -------
 
 
