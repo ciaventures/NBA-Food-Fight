@@ -15,10 +15,10 @@ function getEvents(date) {
 
 	//Grab Orchestrate.io API key from local file 
 	//(to support easy key shielding)
-	var orcKey = fs.readFileSync('./orcKey', {encoding: 'utf8'}).replace('\n', '');
+	var orcKey = process.env.ORC_KEY || fs.readFileSync('./orcKey', {encoding: 'utf8'}).replace('\n', '');
 
 	//Grab xmlstats API key from local file
-	var xmlstatsKey = fs.readFileSync('./xmlstatsKey', {encoding: 'utf8'}).replace('\n', '');
+	var xmlstatsKey = process.env.XMLSTATS_KEY || fs.readFileSync('./xmlstatsKey', {encoding: 'utf8'}).replace('\n', '');
 	var xmlstatsRoot = 'https://erikberg.com/';
 	var db = require('orchestrate')(orcKey);
 
