@@ -1,7 +1,7 @@
 NBA Food Fight
 =================
 
-A game that allows you to play along with in-arena food promotions awards at NBA games with people in the stadium. The application retrieves data from xmlstats
+A game that allows you to play along with in-arena food promotions awards at NBA games with people in the stadium. The application retrives box score and scheduling data from xmlstats.com to provide a calendar data and results.
 <br />
 ##Contributors
 Colin Lebens<br />
